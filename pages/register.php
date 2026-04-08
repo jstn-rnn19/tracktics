@@ -1,0 +1,58 @@
+<?php
+require_once '../includes/config_session.inc.php';
+require_once '../views/signup_view.inc.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracktics | Sign Up</title>
+    <link rel="stylesheet" href="../assets/css/form.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-md mx-auto mt-5 mb-2">
+        <h1 class="text-center" id="Tracktics">Tracktics</h1>
+        
+        <form action="../includes/singup.inc.php" method="post" class="needs-validation">
+            <div class="d-grid gap-2 col-md mx-auto"> 
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="inputName" name="Name" placeholder="name" required>
+                    <label for="inputName">Name</label>
+                    <div  class="invalid-feedback">Please enter a name.</div>
+                </div>
+                <div class="form-floating">
+                    <input type="email" class="form-control " id="inputEmail" name="Email" placeholder="name@example.com" required>
+                    <label for="inputEmail">Email address</label>
+                    <div class="invalid-feedback email-feedback">Please enter a email address.</div>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="password" name="Password" placeholder="Password" required>
+                    <label for="password">Password</label>
+                    <div class="invalid-feedback password-feedback">Password do not match.</div>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPass" placeholder="Confirm password" required>
+                    <label for="confirmPassword">Confirm password</label>
+                    <div class="invalid-feedback confirm-password-feedback">Confirm password do not match.</div>
+                </div>
+            </div>
+            <div class="d-grid gap-2 col-sm mx-auto mt-2">
+                <button class="btn btn-primary" type="submit">Sign Up</button>
+                <button class="btn btn-outline-primary" type="button">Sign In</button>
+            </div>
+        </form>
+    </div>
+
+    <?php
+    check_signup_errors()
+
+    ?>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="/js/form.js"></script>
+</body>
+</html>

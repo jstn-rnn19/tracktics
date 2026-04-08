@@ -1,11 +1,12 @@
 <?php
 
-$dsn = "mysql:host=localhost;dbname=tracktics_db";
-$dbusername = "root";
-$dbpassword = "";
+$host = 'localhost';
+$dbname = 'tracktics_db';
+$dbusername = 'root';
+$dbpassword = ''; 
 
 try {
-    $pdo = new PDO($dsn, $dbusername, $dbpassword);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $dbusername, $dbpassword);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Connection Failed: " . $e->getMessage();
