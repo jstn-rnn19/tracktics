@@ -43,13 +43,13 @@ require_once '../views/signup_view.inc.php';
                 <button class="btn btn-primary" type="submit">Sign Up</button>
                 <button class="btn btn-outline-primary" type="button">Sign In</button>
             </div>
+            <?php
+                check_signup_errors();
+            ?>
         </form>
     </div>
 
-    <?php
-    check_signup_errors()
 
-    ?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

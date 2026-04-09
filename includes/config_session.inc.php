@@ -10,6 +10,10 @@ session_set_cookie_params([
     'secure' => true,
     'httponly' => true
 ]);
+function regeneration_session_id() {
+    session_regenerate_id();
+    $_SESSION["last_generation"] = time();
+}
 
 session_start();
 
@@ -22,7 +26,3 @@ if (!isset($_SESSION["last_generation"])) {
     }
 }
 
-function regeneration_session_id() {
-    session_regenerate_id();
-    $_SESSION["last_generation"] = time();
-}

@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-function is_input_empty(string $name, string $email, string $pwd, string $cnfirmpwd) {
-    if (empty($name) || empty($email) || empty($pwd) || empty($cnfirmpwd)) {
+function is_input_empty(string $name, string $email, string $pwd, string $confirmpwd) {
+    if (empty($name) || empty($email) || empty($pwd) || empty($confirmpwd)) {
         return true;
     }else {
         return false;
@@ -24,4 +24,16 @@ function is_email_registered(object $pdo, string $email) {
     }else {
         return false;
     }
+};
+
+function conformation_pwd (string $pwd, string $confirmpwd) {
+    if ($pwd !== $confirmpwd) {
+        return true;
+    }else {
+        return false;
+    }
+};
+
+function create_users (object $pdo, string $name, string $email, string $pwd, string $confirmpwd) {
+    set_users($pdo,$name,$email,$pwd,);
 };
