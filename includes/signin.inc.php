@@ -9,6 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once '../models/signin_model.inc.php';
         require_once '../controllers/signin_contr.inc.php';
 
+
+        require_once 'config_session.inc.php';
         //ERROR HANDLERS
         $errors = [];
         if (is_input_empty( $email,  $pwd)) {
@@ -27,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (!is_email_wrong($result) && is_password_wrong($pwd, $result['pwd'])) {
             $errors['login_incorrect'] = 'Incorrect Login info!';
         }
-        require_once 'config_session.inc.php';
+        
 
         if ($errors) {
             $_SESSION["error_signin"] = $errors;
@@ -40,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["user_id"] = $result["user_id"]; 
         $_SESSION["last_generation"] = time();
 
-        header("Location: ../pages/login.php?login=success");
+        header("Location: ../pages/dashboard.php");
         $pdo = null;
         $stmt = null;
         die();

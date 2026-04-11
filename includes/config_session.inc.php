@@ -23,7 +23,7 @@ function regenerate_session_id_loggedin() {
     $sessionId = $newSessionId . '_' . $userId;
     session_id($sessionId);
     $_SESSION["last_generation"] = time();
-}
+}   
 
 session_start();
 if (isset($_SESSION["user_id"])) {
