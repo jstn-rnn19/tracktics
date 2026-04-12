@@ -1,3 +1,11 @@
-#custom-budget {
+.hidden {
     display: none;
+}
+
+#submitBtn {
+    display: block;
+}
+
+.form-check-label {
+    font-size: clamp(12px, .18rem);
 }

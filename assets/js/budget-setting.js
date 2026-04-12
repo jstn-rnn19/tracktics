@@ -1,18 +1,36 @@
-const monthlyAllowance = document.querySelector('#monthly-allowance');
+document.addEventListener("DOMContentLoaded", () => {
 
-const budgetTypeRadio = document.querySelectorAll("input[name='inlineRadioOptions']");
+    const radios = document.querySelectorAll('input[name="option"]');
+    const customBudget = document.getElementById("custom-budget");
+    const monthlyAllowance = document.getElementById('monthly-allowance');
+    const forms = document.querySelectorAll('validation');
+console.log(typeof(monthlyAllowance));
+    radios.forEach(radio => {
+        radio.addEventListener("change", () => {
 
-const customBudget = document.getElementById('custom-budget');
+            const selected = document.querySelector('input[name="option"]:checked');
 
-budgetTypeRadio.forEach( radio => {
+            if (selected.value === "custom") {
+                customBudget.classList.remove("hidden");
+            } else {
+                customBudget.classList.add("hidden");
+            }
 
-    radio.addEventListener("change", () => {
+        });
+    });
+    
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            let invalid = form.checkVisibility;
+            console.log(typeof(monthlyAllowance));
+            if(monthlyAllowance.value === "") {
+                monthlyAllowance.classList.add('is-invalid');
+            }
 
-        if (radio.value === "custom" && radio.checked) {
-            customBudget.style.display = "block";
-        }else {
-            customBudget.style.display = "none";
-        }
+            if (!invalid) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+        }, false)
     })
-
-})
+});
