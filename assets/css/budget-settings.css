@@ -9,3 +9,18 @@
 .form-check-label {
     font-size: clamp(12px, .18rem);
 }
+
+/* This might not work (low specificity) */
+.tooltip-inner {
+    background-color: #007bff !important;
+}
+
+/* Better - use the parent class for higher specificity */
+.tooltip .tooltip-inner {
+    background-color: #007bff;
+    color: white;
+}
+
+.tooltip .tooltip-arrow::before {
+    border-left-color: #007bff !important;
+}

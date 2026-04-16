@@ -16,9 +16,9 @@
         <h1 class="text-center" id="title">Budget Setup</h1>
 
         <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="monthly-allowance" name="MonthlyAllowance" placeholder="2000" required>
+            <input type="number" min="1" class="form-control" id="monthly-allowance" name="MonthlyAllowance" placeholder="2000" required>
             <label for="monthly-allowance">Monthly allowance</label>
-            <div class="invalid-feedback">Please  fill monthly allowance</div>
+            <div class="invalid-feedback">Please Correctly fill monthly allowance</div>
         </div>
 
         <h5 id="budget-type-title">Budget Type</h5>
@@ -36,18 +36,24 @@
         <div id="custom-budget" class="hidden mt-3">
 
             <div class="form-floating mb-2">
-                <input type="number" class="form-control" name="needs" placeholder="50">
-                <label>Needs</label>
+                <input type="number" class="form-control" name="needs" placeholder="50"
+                data-bs-toggle="tooltip" data-bs-placement="left" title="Enter % for essentials (food, rent, utilities). Adjust based on your lifestyle">
+                <label>Needs %</label>
+                <div class="invalid-feedback">Please fill correctly the filled</div>
             </div>
 
             <div class="form-floating mb-2">
-                <input type="number" class="form-control" name="wants" placeholder="30">
-                <label>Wants</label>
+                <input type="number"  class="form-control" name="wants" placeholder="30"
+                data-bs-toggle="tooltip" data-bs-placement="left" title="Enter % for (Personal Wants & Hobbies, Fun & Entertainment, Shopping). Adjust based on your lifestyle">
+                <label>Wants %</label>
+                <div class="invalid-feedback">Please fill correctly the filled</div>
             </div>
 
             <div class="form-floating mb-2">
-                <input type="number" class="form-control" name="savings" placeholder="20">
-                <label>Savings</label>
+                <input type="number" class="form-control" name="savings" placeholder="20" 
+                data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="left" title="Enter % for (Financial Goals, Emergency Fund, Future Planning, Savings & Investments). Adjust based on your lifestyle">
+                <label>Savings (%)</label>
+                <div class="invalid-feedback">Please fill correctly the filled</div>
             </div>
 
         </div>
